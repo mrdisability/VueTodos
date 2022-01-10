@@ -33,7 +33,7 @@ export default {
 
             todos.value = response.data;
 
-            //console.log(todos.value);
+            console.log(todos.value);
         });
 
         const del = async (id: number) => {
