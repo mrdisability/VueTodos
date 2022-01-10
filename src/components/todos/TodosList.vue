@@ -8,9 +8,15 @@
     </ul>
 </template>
 
-<script>
+<script lang="ys">
+import {ref} from 'vue';
+import axios from 'axios';
+
 export default {
-    name: 'TodosList'
+    name: 'TodosList',
+    setup() {
+        const todos = ref([]);
+    }
 }
 </script>
 
