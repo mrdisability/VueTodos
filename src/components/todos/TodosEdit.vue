@@ -2,7 +2,8 @@
     <form @submit.prevent="submit">
         <input type="text" class="form-control" id="todo" placeholder="Todo" name="todo" v-model="todo">
         <div class="form-check" style="margin-left: 10px">
-            <input class="form-check-input" type="checkbox" v-model="completed" true-value="1" false-value="0" id="completed">
+            <input class="form-check-input" type="checkbox" 
+              v-model="completed" id="completed">
             <label class="form-check-label" for="completed">
                 Completed
             </label>
@@ -25,9 +26,13 @@ export default {
     const router = useRouter();
     const {params} = useRoute();
 
+    //Could have used localStorage to get data to update similar to react
+
     onMounted(async () => {
       const todoCall = await axios.get(`todos/${params.id}`);
       const todoItem: Todo = todoCall.data;
+
+      //console.log(todoItem);
 
       todo.value = todoItem.todo;
       completed.value = todoItem.completed;

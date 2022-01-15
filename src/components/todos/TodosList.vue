@@ -1,16 +1,18 @@
 <template>
     <ul class="list-group" v-for="todo in todos" :key="todo.id">
         <li class="list-group-item">
-            {{todo.todo}} 
+            <router-link :to="`/todos/${todo.id}/edit`">
+                {{todo.todo}} 
+            </router-link>
 
-            <span v-if="todo.completed" class="badge bg-primary">Completed</span>
+            <span style="margin-left: 10px" v-if="todo.completed" class="badge bg-success">Completed</span>
 
-            <span v-if="!todo.completed" class="badge bg-danger">Incomplete</span>
+            <span style="margin-left: 10px" v-if="!todo.completed" class="badge bg-danger">Incomplete</span>
 
             <div style="float: right">
-                <router-link :to="`/todos/${todo.id}/edit`" class="btn btn-secondary">
+                <!-- <router-link :to="`/todos/${todo.id}/edit`" class="btn btn-secondary">
                     Edit
-                </router-link>
+                </router-link> -->
 
                 <button type="button" style="margin-left: 5px" class="btn btn-danger" @click="del(todo.id)">Delete</button>
             </div>
@@ -33,7 +35,7 @@ export default {
 
             todos.value = response.data;
 
-            console.log(todos.value);
+            //console.log(todos.value);
         });
 
         const del = async (id: number) => {
