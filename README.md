@@ -1,5 +1,5 @@
 # VueTodos
 
-## Laravel backend: https://github.com/thesamoanppprogrammer/PracticeLaravel
+## Laravel (Backend): https://github.com/thesamoanppprogrammer/PracticeLaravel
 
-## Ruby On Rails backend: https://github.com/thesamoanppprogrammer/PracticeRubyOnRails
+## Ruby On Rails (Backend): https://github.com/thesamoanppprogrammer/PracticeRubyOnRails
